@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var loginView = LoginView()
 
@@ -32,6 +32,18 @@ class LoginViewController: UIViewController {
     
     
     func phoneNumAction() {
+        let phonesVC = PhoneNumbersTableViewController()
+        let backBTN = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"),
+                                      style: .plain,
+                                      target: navigationController,
+                                      action: #selector(UINavigationController.popViewController(animated:)))
+        backBTN.tintColor = .black
+        self.navigationController?.pushViewController(phonesVC, animated: true)
+        phonesVC.modalPresentationStyle = .currentContext
+        phonesVC.title = "Phone Numbers"
+        phonesVC.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 18)!]
+        phonesVC.navigationItem.leftBarButtonItem = backBTN
+        phonesVC.navigationController?.interactivePopGestureRecognizer?.delegate = self
         print("working")
     }
     

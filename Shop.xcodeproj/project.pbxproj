@@ -31,6 +31,12 @@
 		A56DDE222816C15700A6563B /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A56DDE012816C10F00A6563B /* Poppins-ThinItalic.ttf */; };
 		A56DDE232816C15700A6563B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A56DDE112816C11000A6563B /* Poppins-SemiBold.ttf */; };
 		A56DDE242816C15700A6563B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A56DDE0D2816C11000A6563B /* Poppins-Regular.ttf */; };
+		A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE252816F0C200A6563B /* PhoneNumbersTableView.swift */; };
+		A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE272816F0D600A6563B /* PhoneNumbersTableViewController.swift */; };
+		A56DDE2A2816F3D500A6563B /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56DDE292816F3D500A6563B /* Test.storyboard */; };
+		A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2B2816FAB100A6563B /* CountriesData.swift */; };
+		A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */; };
+		A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		A56DDE102816C11000A6563B /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
 		A56DDE112816C11000A6563B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		A56DDE122816C11000A6563B /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A56DDE252816F0C200A6563B /* PhoneNumbersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumbersTableView.swift; sourceTree = "<group>"; };
+		A56DDE272816F0D600A6563B /* PhoneNumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumbersTableViewController.swift; sourceTree = "<group>"; };
+		A56DDE292816F3D500A6563B /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		A56DDE2B2816FAB100A6563B /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
+		A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVeritificationView.swift; sourceTree = "<group>"; };
+		A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVeritificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,7 @@
 		A56DDDFA2816B34C00A6563B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A56DDE2B2816FAB100A6563B /* CountriesData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +137,9 @@
 			children = (
 				A56DDDF02816B2FA00A6563B /* LaunchScreen.storyboard */,
 				A56DDDFE2816B4C000A6563B /* LoginView.swift */,
+				A56DDE252816F0C200A6563B /* PhoneNumbersTableView.swift */,
+				A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */,
+				A56DDE292816F3D500A6563B /* Test.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				A56DDDE92816B2FA00A6563B /* LoginViewController.swift */,
+				A56DDE272816F0D600A6563B /* PhoneNumbersTableViewController.swift */,
+				A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +249,7 @@
 				A56DDDF22816B2FA00A6563B /* LaunchScreen.storyboard in Resources */,
 				A56DDE192816C14500A6563B /* Poppins-ExtraLight.ttf in Resources */,
 				A56DDE132816C13400A6563B /* Poppins-Bold.ttf in Resources */,
+				A56DDE2A2816F3D500A6563B /* Test.storyboard in Resources */,
 				A56DDE172816C14100A6563B /* Poppins-ExtraBold.ttf in Resources */,
 				A56DDE1C2816C14E00A6563B /* Poppins-Light.ttf in Resources */,
 				A56DDE1B2816C14B00A6563B /* Poppins-Italic.ttf in Resources */,
@@ -252,7 +271,12 @@
 				A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
+				A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */,
+				A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */,
+				A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */,
 				A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */,
+				A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */,
+				A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
