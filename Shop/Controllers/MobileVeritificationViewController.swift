@@ -10,11 +10,14 @@ import UIKit
 class MobileVeritificationViewController: UIViewController, UITextFieldDelegate {
     
     var mobileView = MobileVeritificationView()
+    
+    var phoneCode = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         mobileView.sendSmsAcrion = sendSmsBtnAction
+        mobileView.phoneTextAction = phoneTextAction
         
        
     }
@@ -26,17 +29,31 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
         self.view.addSubview(mobileView)
         mobileView.setUpView()
         mobileView.phoneText.delegate = self
+        mobileView.phoneText.placeholder = phoneCode
     }
     
     func sendSmsBtnAction() {
-        if mobileView.phoneText.text == nil {
-            mobileView.sendSmsBtn.backgroundColor = .gray
-        }else{
-            mobileView.sendSmsBtn.layer.backgroundColor =  UIColor(red: 0.929, green: 0.11, blue: 0.454, alpha: 1).cgColor
-        }
-            
-                
+        mobileView.verifyTextLabel.isHidden = false
+        mobileView.sendSmsBtn.isHidden = true
+        print("WORKING")
     }
+    
+    func phoneTextAction() {
+        mobileView.phoneText.text = mobileView.phoneText.text!.applyPatternOnNumbers()
+        if mobileView.phoneText.text == "" {
+            mobileView.sendSmsBtn.layer.backgroundColor = Constants().greyColor
+            mobileView.sendSmsBtn.isEnabled = false
+        }else{
+            mobileView.sendSmsBtn.layer.backgroundColor = Constants().pinkColor
+            mobileView.sendSmsBtn.isEnabled = true
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        mobileView.phoneText.self.endEditing(true)
+    }
+    
+    
     
 
 

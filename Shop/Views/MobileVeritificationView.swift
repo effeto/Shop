@@ -10,6 +10,14 @@ import UIKit
 class MobileVeritificationView: UIView {
     
     var sendSmsAcrion: (() -> Void)?
+    var phoneTextAction:(() -> Void)?
+    
+
+    
+    
+    
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +32,8 @@ class MobileVeritificationView: UIView {
         setImageView()
         setPhoneText()
         setsendSmsBtn()
+        setVerifyTextLabel()
+       
     }
     
     let imageView: UIImageView = {
@@ -52,7 +62,13 @@ class MobileVeritificationView: UIView {
         text.backgroundColor = .white
         text.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
         text.layer.cornerRadius = 12
+        text.keyboardType = .numberPad
+        text.textAlignment = .left
+        text.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        text.font = UIFont(name: "Poppins-Medium", size: 16)
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.addTarget(self, action: #selector(phoneTextTaped), for: .editingChanged)
+       
         return text
     }()
     
@@ -63,13 +79,12 @@ class MobileVeritificationView: UIView {
         phoneText.heightAnchor.constraint(equalToConstant: 48).isActive = true
         phoneText.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
         phoneText.topAnchor.constraint(equalTo: self.topAnchor, constant: 332).isActive = true
-        
     }
     
     let sendSmsBtn: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 343, height: 48)
-        button.layer.backgroundColor = UIColor(red: 0.929, green: 0.11, blue: 0.454, alpha: 1).cgColor
+        button.layer.backgroundColor = Constants().greyColor
         button.layer.cornerRadius = 20
         button.setTitle("Send code", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
@@ -90,8 +105,36 @@ class MobileVeritificationView: UIView {
         sendSmsBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 420).isActive = true
     }
     
+    let verifyTextLabel: UILabel =  {
+        let text = UILabel()
+        text.frame = CGRect(x: 0, y: 0, width: 327, height: 54)
+        text.backgroundColor = .white
+        text.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        text.font = UIFont(name: "Poppins-Regular", size: 18)
+        text.numberOfLines = 0
+        text.lineBreakMode = .byWordWrapping
+        text.isHidden = true
+        return text
+    }()
+    
+    func setVerifyTextLabel() {
+        self.addSubview(verifyTextLabel)
+        verifyTextLabel.text = "Enter the 4 digit number sent to this phone number: \(phoneText.text ?? "")"
+        verifyTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        verifyTextLabel.widthAnchor.constraint(equalToConstant: 327).isActive = true
+        verifyTextLabel.heightAnchor.constraint(equalToConstant: 54).isActive = true
+        verifyTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
+        verifyTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 412).isActive = true
+    }
+    
+
+    
     @objc func sendSmsTaped() {
         sendSmsAcrion?()
+    }
+    
+    @objc func phoneTextTaped() {
+        phoneTextAction?()
     }
     
     

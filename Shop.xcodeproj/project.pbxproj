@@ -37,6 +37,9 @@
 		A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2B2816FAB100A6563B /* CountriesData.swift */; };
 		A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */; };
 		A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */; };
+		A56DDE362817C1FC00A6563B /* MobileVerifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */; };
+		A56DDE382817DE4B00A6563B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE372817DE4B00A6563B /* String.swift */; };
+		A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE3A2817E6CD00A6563B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		A56DDE2B2816FAB100A6563B /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
 		A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVeritificationView.swift; sourceTree = "<group>"; };
 		A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVeritificationViewController.swift; sourceTree = "<group>"; };
+		A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerifTableViewCell.swift; sourceTree = "<group>"; };
+		A56DDE372817DE4B00A6563B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A56DDE3A2817E6CD00A6563B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 				A56DDDFB2816B35500A6563B /* Views */,
 				A56DDDFC2816B36100A6563B /* Controllers */,
 				A56DDDF92816B32400A6563B /* Extra */,
+				A56DDE392817DE5800A6563B /* Extensions */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 				A56DDDEE2816B2FA00A6563B /* Assets.xcassets */,
 				A56DDDE52816B2FA00A6563B /* AppDelegate.swift */,
 				A56DDDE72816B2FA00A6563B /* SceneDelegate.swift */,
+				A56DDE3A2817E6CD00A6563B /* Constants.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -135,11 +143,12 @@
 		A56DDDFB2816B35500A6563B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A56DDE292816F3D500A6563B /* Test.storyboard */,
 				A56DDDF02816B2FA00A6563B /* LaunchScreen.storyboard */,
+				A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */,
 				A56DDDFE2816B4C000A6563B /* LoginView.swift */,
 				A56DDE252816F0C200A6563B /* PhoneNumbersTableView.swift */,
 				A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */,
-				A56DDE292816F3D500A6563B /* Test.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +186,14 @@
 				A56DDE012816C10F00A6563B /* Poppins-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A56DDE392817DE5800A6563B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A56DDE372817DE4B00A6563B /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56DDE362817C1FC00A6563B /* MobileVerifTableViewCell.swift in Sources */,
+				A56DDE382817DE4B00A6563B /* String.swift in Sources */,
 				A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
@@ -277,6 +296,7 @@
 				A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */,
 				A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */,
 				A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */,
+				A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

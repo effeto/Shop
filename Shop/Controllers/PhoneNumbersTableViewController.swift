@@ -14,6 +14,7 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
     var phoneTableView = UITableView()
     
     var phoneCodes:[CountriesData] = []
+   
     
     
     override func viewDidLoad() {
@@ -45,9 +46,10 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = phoneTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        var contect = cell.defaultContentConfiguration()
-        contect.text = phoneCodes[indexPath.row].name
-        cell.contentConfiguration = contect
+        cell.textLabel?.font = UIFont(name: "Poppins-Medium", size: 16)
+        var content = cell.defaultContentConfiguration()
+        content.text = "\(phoneCodes[indexPath.row].name) (\(phoneCodes[indexPath.row].code))"
+        cell.contentConfiguration = content
         return cell
     }
     
@@ -67,8 +69,9 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
         backBTN.tintColor = .black
         mobileVC.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Regular", size: 18)!]
         mobileVC.navigationItem.leftBarButtonItem = backBTN
+        mobileVC.phoneCode = "(\(phoneCodes[indexPath.row].code))"
         show(mobileVC, sender: self)
-        print(phoneCodes[indexPath.row].code)
+        
 
     }
     
