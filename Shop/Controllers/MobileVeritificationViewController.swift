@@ -18,8 +18,9 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
         setView()
         mobileView.sendSmsAcrion = sendSmsBtnAction
         mobileView.phoneTextAction = phoneTextAction
-        
-       
+        mobileView.oneTimeCodeAction = oneTimeCodeAction
+        mobileView.verifyBtnAction = verifyBtnAction
+        mobileView.finishBtnAction = finishBtnAction
     }
     
     func setView() {
@@ -33,8 +34,11 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
     }
     
     func sendSmsBtnAction() {
-        mobileView.verifyTextLabel.isHidden = false
         mobileView.sendSmsBtn.isHidden = true
+        mobileView.verifyTextLabel.isHidden = false
+        mobileView.oneTimeCodeTextLabel.isHidden = false
+        mobileView.verifyBtn.isHidden = false
+        
         print("WORKING")
     }
     
@@ -51,7 +55,41 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         mobileView.phoneText.self.endEditing(true)
+        mobileView.oneTimeCodeTextLabel.self.endEditing(true)
     }
+    
+    func verifyBtnAction() {
+            hideVerify()
+            print("Working")
+            mobileView.finisImage.isHidden = false
+            mobileView.verifySuccesLabel.isHidden = false
+            mobileView.finishBtn.isHidden = false
+        
+    }
+    
+    func oneTimeCodeAction() {
+        if mobileView.oneTimeCodeTextLabel.text == "" {
+            mobileView.verifyBtn.layer.backgroundColor = Constants().greyColor
+            mobileView.verifyBtn.isEnabled = false
+        }else{
+            mobileView.verifyBtn.layer.backgroundColor = Constants().pinkColor
+            mobileView.verifyBtn.isEnabled = true
+        }
+    }
+    
+    func hideVerify() {
+        mobileView.verifyBtn.isHidden = true
+        mobileView.oneTimeCodeTextLabel.isHidden = true
+        mobileView.phoneText.isHidden = true
+        mobileView.imageView.isHidden = true
+        mobileView.verifyTextLabel.isHidden = true
+    }
+    
+    func finishBtnAction() {
+        print("WORKING!!!")
+    }
+    
+    
     
     
     

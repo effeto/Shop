@@ -11,6 +11,9 @@ class MobileVeritificationView: UIView {
     
     var sendSmsAcrion: (() -> Void)?
     var phoneTextAction:(() -> Void)?
+    var verifyBtnAction:(() -> Void)?
+    var oneTimeCodeAction:(() -> Void)?
+    var finishBtnAction: (() -> Void)?
     
 
     
@@ -33,6 +36,12 @@ class MobileVeritificationView: UIView {
         setPhoneText()
         setsendSmsBtn()
         setVerifyTextLabel()
+        oneTimeCodeTextLabel.configure(withSlotCount: 4, andSpacing: 10)
+        setOneTimeCodeTextField()
+        setVerifyBtn()
+        setFinishImage()
+        setVerifySucess()
+        setFinishBtn()
        
     }
     
@@ -127,6 +136,115 @@ class MobileVeritificationView: UIView {
         verifyTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 412).isActive = true
     }
     
+    
+    let oneTimeCodeTextLabel = OneTimeCodeTextField()
+    
+    func setOneTimeCodeTextField() {
+        self.addSubview(oneTimeCodeTextLabel)
+        oneTimeCodeTextLabel.backgroundColor = .blue
+        oneTimeCodeTextLabel.codeFont = UIFont(name: "Poppins-Medium", size: 36)!
+        oneTimeCodeTextLabel.codeMinimumScaleFactor = 0.9
+        oneTimeCodeTextLabel.codeCornerRadius = 0
+        oneTimeCodeTextLabel.codeCornerCurve = .circular
+        oneTimeCodeTextLabel.codeBorderWidth = 0
+        oneTimeCodeTextLabel.isHidden = true
+        oneTimeCodeTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        oneTimeCodeTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148).isActive = true
+        oneTimeCodeTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 498).isActive = true
+        oneTimeCodeTextLabel.addTarget(self, action: #selector(oneTimeCodeTaped), for: .editingChanged)
+
+
+    }
+    
+    let verifyBtn: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 343, height: 48)
+        button.layer.backgroundColor = Constants().greyColor
+        button.layer.cornerRadius = 20
+        button.setTitle("Verify", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        button.titleLabel?.textAlignment = .center
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(verifyBtnTaped), for: .touchUpInside)
+        button.isHidden = true
+        button.isEnabled = false
+        
+        return button
+    }()
+    
+    func setVerifyBtn() {
+        self.addSubview(verifyBtn)
+        verifyBtn.widthAnchor.constraint(equalToConstant: 343).isActive = true
+        verifyBtn.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        verifyBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        verifyBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 642).isActive = true
+    }
+    
+    let finisImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "finish.png")
+        image.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
+        image.backgroundColor = .white
+        image.isHidden = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    func setFinishImage() {
+        self.addSubview(finisImage)
+        finisImage.translatesAutoresizingMaskIntoConstraints = false
+        finisImage.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        finisImage.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        finisImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 128).isActive = true
+        finisImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 244).isActive = true
+    }
+    
+    let verifySuccesLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 306, height: 24)
+        label.backgroundColor = .white
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        label.text = "Your number successfully verified"
+        label.font = UIFont(name: "Poppins-Medium", size: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        return label
+    }()
+    
+    func setVerifySucess() {
+        self.addSubview(verifySuccesLabel)
+        verifySuccesLabel.widthAnchor.constraint(equalToConstant: 306).isActive = true
+        verifySuccesLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        verifySuccesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 35).isActive = true
+        verifySuccesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 404).isActive = true
+    }
+    
+    let finishBtn: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 343, height: 48)
+        button.layer.backgroundColor = Constants().pinkColor
+        button.layer.cornerRadius = 20
+        button.setTitle("Finish", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        button.titleLabel?.textAlignment = .center
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(finishBtnTaped), for: .touchUpInside)
+        button.isHidden = true
+        return button
+    }()
+    
+    func setFinishBtn() {
+        self.addSubview(finishBtn)
+        finishBtn.widthAnchor.constraint(equalToConstant: 343).isActive = true
+        finishBtn.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        finishBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        finishBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 468).isActive = true
+
+
+    }
+    
 
     
     @objc func sendSmsTaped() {
@@ -135,6 +253,18 @@ class MobileVeritificationView: UIView {
     
     @objc func phoneTextTaped() {
         phoneTextAction?()
+    }
+    
+    @objc func verifyBtnTaped() {
+        verifyBtnAction?()
+    }
+    
+    @objc func oneTimeCodeTaped() {
+        oneTimeCodeAction?()
+    }
+    
+    @objc func finishBtnTaped() {
+        finishBtnAction?()
     }
     
     
