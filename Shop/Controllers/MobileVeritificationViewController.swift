@@ -87,6 +87,9 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
     
     func finishBtnAction() {
         print("WORKING!!!")
+        let mainScreenVC = MainScreenViewController()
+        show(mainScreenVC, sender: self)
+        
     }
     
     

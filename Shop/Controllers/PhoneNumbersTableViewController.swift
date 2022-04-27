@@ -36,10 +36,6 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
         
     }
     
-
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return phoneCodes.count
     }

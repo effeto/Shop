@@ -49,14 +49,22 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func appleBtnAction() {
         print ("working")
+        let mainScreenVC = MainScreenViewController()
+        mainScreenVC.createTapBar()
+        show(mainScreenVC, sender: self)
+        
     }
     
     func googleBtnAction() {
         print("Working")
+        let mainScreenVC = MainScreenViewController()
+        show(mainScreenVC, sender: self)
     }
     
     func guestBtnAction() {
         print("working")
+        let mainScreenVC = MainScreenViewController()
+        show(mainScreenVC, sender: self)
     }
 
 

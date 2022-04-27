@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		16FF9418FDB5CD76BC36261B /* Pods_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3938E6AACECBE05953822E8A /* Pods_Shop.framework */; };
+		A50CDDF82819125800E3DB7C /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDF72819125800E3DB7C /* MainScreenView.swift */; };
+		A50CDDFA2819225000E3DB7C /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDF92819225000E3DB7C /* MainScreenViewController.swift */; };
+		A50CDDFC2819285E00E3DB7C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDFB2819285E00E3DB7C /* SearchViewController.swift */; };
+		A50CDDFE2819288B00E3DB7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */; };
+		A50CDE00281928B500E3DB7C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */; };
+		A50CDE02281928D100E3DB7C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDE01281928D100E3DB7C /* ProfileViewController.swift */; };
 		A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE52816B2FA00A6563B /* AppDelegate.swift */; };
 		A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE72816B2FA00A6563B /* SceneDelegate.swift */; };
 		A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE92816B2FA00A6563B /* LoginViewController.swift */; };
@@ -49,6 +55,12 @@
 		36F0A92949553C2205EED6BD /* Pods-Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shop.debug.xcconfig"; path = "Target Support Files/Pods-Shop/Pods-Shop.debug.xcconfig"; sourceTree = "<group>"; };
 		3938E6AACECBE05953822E8A /* Pods_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7BF92014AA55BF345AB04F /* Pods-Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shop.release.xcconfig"; path = "Target Support Files/Pods-Shop/Pods-Shop.release.xcconfig"; sourceTree = "<group>"; };
+		A50CDDF72819125800E3DB7C /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		A50CDDF92819225000E3DB7C /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		A50CDDFB2819285E00E3DB7C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		A50CDE01281928D100E3DB7C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A56DDDE22816B2FA00A6563B /* Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56DDDE52816B2FA00A6563B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A56DDDE72816B2FA00A6563B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +191,7 @@
 				A56DDE3E28181C9400A6563B /* OneTimeCodeTextField.swift */,
 				A56DDE4028181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift */,
 				A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */,
+				A50CDDF72819125800E3DB7C /* MainScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +202,11 @@
 				A56DDDE92816B2FA00A6563B /* LoginViewController.swift */,
 				A56DDE272816F0D600A6563B /* PhoneNumbersTableViewController.swift */,
 				A56DDE2F28172B0E00A6563B /* MobileVeritificationViewController.swift */,
+				A50CDDF92819225000E3DB7C /* MainScreenViewController.swift */,
+				A50CDDFB2819285E00E3DB7C /* SearchViewController.swift */,
+				A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */,
+				A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */,
+				A50CDE01281928D100E3DB7C /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -359,18 +377,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50CDE00281928B500E3DB7C /* NotificationsViewController.swift in Sources */,
 				A56DDE362817C1FC00A6563B /* MobileVerifTableViewCell.swift in Sources */,
+				A50CDE02281928D100E3DB7C /* ProfileViewController.swift in Sources */,
 				A56DDE382817DE4B00A6563B /* String.swift in Sources */,
 				A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */,
+				A50CDDFC2819285E00E3DB7C /* SearchViewController.swift in Sources */,
 				A56DDE4128181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
 				A56DDE3F28181C9400A6563B /* OneTimeCodeTextField.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
 				A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */,
+				A50CDDF82819125800E3DB7C /* MainScreenView.swift in Sources */,
 				A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */,
 				A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */,
 				A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */,
+				A50CDDFE2819288B00E3DB7C /* OrdersViewController.swift in Sources */,
 				A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */,
+				A50CDDFA2819225000E3DB7C /* MainScreenViewController.swift in Sources */,
 				A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */,
 				A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */,
 			);
