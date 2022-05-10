@@ -24,7 +24,10 @@ class MainScreenView: UIView {
         backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
         setAds()
         setIKnowBtn()
+//        setPopMallLabel()
         setPopularMallsTableView()
+        setCategoriesLabel()
+        
     }
     
     let putYourAdressBtn: UIButton = {
@@ -39,23 +42,29 @@ class MainScreenView: UIView {
 
     }()
     
-    let adsTableView:UITableView = {
-        let tableView = UITableView()
-        tableView.automaticallyAdjustsScrollIndicatorInsets = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = .green
+    let adsCollectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 100)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.automaticallyAdjustsScrollIndicatorInsets = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = .clear
+        layout.scrollDirection = .horizontal
+        
+        collectionView.register(AdsCollectionViewCell.self, forCellWithReuseIdentifier: AdsCollectionViewCell.identifier)
                 
-        return tableView
+        return collectionView
         
     }()
     
     func setAds() {
-        self.addSubview(adsTableView)
-        adsTableView.widthAnchor.constraint(equalToConstant: 496).isActive = true
-        adsTableView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        adsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
-        adsTableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 104).isActive = true
+        self.addSubview(adsCollectionView)
+        adsCollectionView.widthAnchor.constraint(equalToConstant: 496).isActive = true
+        adsCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        adsCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        adsCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 104).isActive = true
     }
     
     let iKnowBtn: UIButton = {
@@ -80,22 +89,62 @@ class MainScreenView: UIView {
         iKnowBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 226).isActive = true
     }
     
-    let popularMallTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.automaticallyAdjustsScrollIndicatorInsets = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = .red
-        return tableView
+    
+    let popularMallsLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 343, height: 32)
+        label.backgroundColor = .white
+        label.textColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 1)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 28)
+        label.text = "Popular Malls"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setPopMallLabel() {
+        self.addSubview(popularMallsLabel)
+    }
+    
+    let popularMallCollectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 124)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.automaticallyAdjustsScrollIndicatorInsets = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .red
+        layout.scrollDirection = .horizontal
+        collectionView.register(MallsCollectionViewCell.self, forCellWithReuseIdentifier: MallsCollectionViewCell.identifier)
+        return collectionView
     }()
     
     func setPopularMallsTableView() {
-        self.addSubview(popularMallTableView)
-        popularMallTableView.widthAnchor.constraint(equalToConstant: 496).isActive = true
-        popularMallTableView.heightAnchor.constraint(equalToConstant: 172).isActive = true
-        popularMallTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
-        popularMallTableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 316).isActive = true
+        self.addSubview(popularMallCollectionView)
+        popularMallCollectionView.widthAnchor.constraint(equalToConstant: 496).isActive = true
+        popularMallCollectionView.heightAnchor.constraint(equalToConstant: 172).isActive = true
+        popularMallCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        popularMallCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 316).isActive = true
         
+    }
+    
+    let categoriesLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 160, height: 32)
+        label.backgroundColor = .clear
+        label.textColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 1)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 28)
+        label.text = "Categories"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setCategoriesLabel() {
+        self.addSubview(categoriesLabel)
+        categoriesLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
+        categoriesLabel.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        categoriesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        categoriesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 512).isActive = true
     }
     
     @objc func putYourAdressTaped() {

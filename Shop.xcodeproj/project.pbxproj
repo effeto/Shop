@@ -49,6 +49,10 @@
 		A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE3A2817E6CD00A6563B /* Constants.swift */; };
 		A56DDE3F28181C9400A6563B /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE3E28181C9400A6563B /* OneTimeCodeTextField.swift */; };
 		A56DDE4128181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDE4028181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift */; };
+		A56E0C9D282A928A0067F4FC /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0C9C282A928A0067F4FC /* AdsCollectionViewCell.swift */; };
+		A56E0C9F282A93DC0067F4FC /* Adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0C9E282A93DC0067F4FC /* Adds.swift */; };
+		A56E0CA1282AAC220067F4FC /* Malls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0CA0282AAC220067F4FC /* Malls.swift */; };
+		A56E0CA3282AACB60067F4FC /* MallsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +102,10 @@
 		A56DDE3A2817E6CD00A6563B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A56DDE3E28181C9400A6563B /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		A56DDE4028181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		A56E0C9C282A928A0067F4FC /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A56E0C9E282A93DC0067F4FC /* Adds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adds.swift; sourceTree = "<group>"; };
+		A56E0CA0282AAC220067F4FC /* Malls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Malls.swift; sourceTree = "<group>"; };
+		A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,16 @@
 				6E7BF92014AA55BF345AB04F /* Pods-Shop.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A53DE73A281A616E00D2C62E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */,
+				A56E0C9C282A928A0067F4FC /* AdsCollectionViewCell.swift */,
+				A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A56DDDD92816B2FA00A6563B = {
@@ -176,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				A56DDE2B2816FAB100A6563B /* CountriesData.swift */,
+				A56E0C9E282A93DC0067F4FC /* Adds.swift */,
+				A56E0CA0282AAC220067F4FC /* Malls.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,9 +203,9 @@
 		A56DDDFB2816B35500A6563B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A53DE73A281A616E00D2C62E /* Cells */,
 				A56DDE292816F3D500A6563B /* Test.storyboard */,
 				A56DDDF02816B2FA00A6563B /* LaunchScreen.storyboard */,
-				A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */,
 				A56DDDFE2816B4C000A6563B /* LoginView.swift */,
 				A56DDE252816F0C200A6563B /* PhoneNumbersTableView.swift */,
 				A56DDE3E28181C9400A6563B /* OneTimeCodeTextField.swift */,
@@ -384,17 +404,21 @@
 				A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */,
 				A50CDDFC2819285E00E3DB7C /* SearchViewController.swift in Sources */,
 				A56DDE4128181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift in Sources */,
+				A56E0CA1282AAC220067F4FC /* Malls.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
 				A56DDE3F28181C9400A6563B /* OneTimeCodeTextField.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
 				A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */,
+				A56E0C9F282A93DC0067F4FC /* Adds.swift in Sources */,
 				A50CDDF82819125800E3DB7C /* MainScreenView.swift in Sources */,
 				A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */,
 				A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */,
+				A56E0CA3282AACB60067F4FC /* MallsCollectionViewCell.swift in Sources */,
 				A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */,
 				A50CDDFE2819288B00E3DB7C /* OrdersViewController.swift in Sources */,
 				A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */,
 				A50CDDFA2819225000E3DB7C /* MainScreenViewController.swift in Sources */,
+				A56E0C9D282A928A0067F4FC /* AdsCollectionViewCell.swift in Sources */,
 				A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */,
 				A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */,
 			);

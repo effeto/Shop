@@ -18,13 +18,25 @@ class MainScreenViewController: UIViewController {
     let notificationVC = NotificationsViewController()
     let profileVc = ProfileViewController()
     
+    var adds: [Adds] = []
+    var malls: [Malls] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         setUpMainScreenView()
         title = "Home"
+        self.tabBarItem = UITabBarItem.init(title: "Home", image: UIImage(named: "home.png"), tag: 0)
         mainScreenView.putYourAddresAction = putYourAdressAction
         mainScreenView.iKnowBtnAction = iKnowAction
+        adds = getAdd()
+        malls = getMalls()
+        mainScreenView.adsCollectionView.dataSource = self
+        mainScreenView.adsCollectionView.delegate = self
+        mainScreenView.popularMallCollectionView.dataSource = self
+        mainScreenView.popularMallCollectionView.delegate = self
+        
         
     }
     
@@ -32,9 +44,6 @@ class MainScreenViewController: UIViewController {
         super.viewWillAppear(true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainScreenView.putYourAdressBtn)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
-        
-        
-        
     }
     
     
@@ -50,7 +59,6 @@ class MainScreenViewController: UIViewController {
     
     
     func createTapBar() {
-        self.tabBarItem = UITabBarItem.init(title: "Home", image: UIImage(named: "home.png"), tag: 0)
         searchVc.tabBarItem = UITabBarItem.init(title: "Search", image: UIImage(named: "search.png"), tag: 0)
         ordersVC.tabBarItem = UITabBarItem.init(title: "Order", image: UIImage(named: "orders.png"), tag: 0)
         notificationVC.tabBarItem = UITabBarItem.init(title: "Notofoication", image: UIImage(named: "notification.png"), tag: 0)
@@ -75,9 +83,54 @@ class MainScreenViewController: UIViewController {
         print("Working!!!")
     }
     
+
+}
+
+extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == mainScreenView.popularMallCollectionView {
+            return malls.count
+        }
+        return adds.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == mainScreenView.popularMallCollectionView {
+            let cell = mainScreenView.popularMallCollectionView.dequeueReusableCell(withReuseIdentifier: MallsCollectionViewCell.identifier, for: indexPath) as! MallsCollectionViewCell
+            cell.mainImageView.image = malls[indexPath.row].addImage
+            cell.nameLabel.text = malls[indexPath.row].name
+            cell.backgroundColor = .green
+            cell.layer.cornerRadius = 12
+            return cell
+        }
+
+        let cell = mainScreenView.adsCollectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.identifier, for: indexPath) as! AdsCollectionViewCell
+        cell.mainImageView.image =  adds[indexPath.row].addImage
+        cell.backgroundColor = .red
+        cell.layer.cornerRadius = 12
+ 
+        return cell
+    }
     
+    func getAdd() -> [Adds] {
+        let add1 = Adds(addImage: UIImage(named: "add1.png")!)
+        let add2 = Adds(addImage: UIImage(named:"add2.png")!)
+        let add3 = Adds(addImage: UIImage(named:"add3.png")!)
+        let add4 = Adds(addImage: UIImage(named:"add4.png")!)
+        
+        return [add1, add2, add3, add4]
+    }
     
+    func getMalls() -> [Malls] {
+        let mall1 = Malls(addImage: UIImage(named: "mall1.png")!, name: "Name1")
+        let mall2 = Malls(addImage: UIImage(named: "mall2.png")!, name: "Name2")
+        let mall3 = Malls(addImage: UIImage(named: "mall3.png")!, name: "Name3")
+        let mall4 = Malls(addImage: UIImage(named: "mall4.png")!, name: "Name4")
+        
+        return [mall1, mall2, mall3, mall4]
+    }
     
     
 }
+
+
