@@ -9,21 +9,23 @@
 import UIKit
 
 class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate {
-
+    
     var phoneView = PhoneNumbersTableView()
     var phoneTableView = UITableView()
     
     var phoneCodes:[CountriesData] = []
-   
+    var filtredPhoneCodes: [CountriesData] = []
+
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         phoneView.setUpView()
-        phoneView.searchController.searchResultsUpdater = self
         phoneCodes = getData()
-
+        filtredPhoneCodes = phoneCodes
+        
     }
     
     func setView() {
@@ -33,24 +35,21 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
         phoneTableView = phoneView.phonesTable
         phoneTableView.dataSource = self
         phoneTableView.delegate = self
+        phoneView.searchController.searchResultsUpdater = self
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return phoneCodes.count
+        return filtredPhoneCodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = phoneTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.font = UIFont(name: "Poppins-Medium", size: 16)
         var content = cell.defaultContentConfiguration()
-        content.text = "\(phoneCodes[indexPath.row].name) (\(phoneCodes[indexPath.row].code))"
+        content.text = "\(filtredPhoneCodes[indexPath.row].name) (\(filtredPhoneCodes[indexPath.row].code))"
         cell.contentConfiguration = content
         return cell
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,8 +66,6 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
         mobileVC.navigationItem.leftBarButtonItem = backBTN
         mobileVC.phoneCode = "(\(phoneCodes[indexPath.row].code))"
         show(mobileVC, sender: self)
-        
-
     }
     
     
@@ -80,13 +77,14 @@ class PhoneNumbersTableViewController: UIViewController, UITableViewDataSource, 
         let phone5 = CountriesData(name: "United Arab Emirates", code: "+971")
         
         return [phone1, phone2, phone3, phone4, phone5]
-        
     }
     
-    
-    
-    
-
-
-
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filtredPhoneCodes = phoneCodes.filter({(phoneCode: CountriesData) -> Bool in
+                return phoneCode.name.lowercased().contains(searchText.lowercased()) || phoneCode.code.lowercased().contains(searchText.lowercased())
+            })
+            phoneView.phonesTable.reloadData()
+        }
+    }
 }
