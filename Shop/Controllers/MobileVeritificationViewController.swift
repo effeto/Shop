@@ -43,7 +43,7 @@ class MobileVeritificationViewController: UIViewController, UITextFieldDelegate 
     }
     
     func phoneTextAction() {
-        mobileView.phoneText.text = mobileView.phoneText.text!.applyPatternOnNumbers()
+        mobileView.phoneText.text = mobileView.phoneText.text!.applyPatternOnNumbers(pattern: "##-##-###", replacmentCharacter: "#")
         if mobileView.phoneText.text == "" {
             mobileView.sendSmsBtn.layer.backgroundColor = Constants().greyColor
             mobileView.sendSmsBtn.isEnabled = false

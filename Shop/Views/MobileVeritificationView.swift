@@ -148,6 +148,7 @@ class MobileVeritificationView: UIView {
         oneTimeCodeTextLabel.codeCornerCurve = .circular
         oneTimeCodeTextLabel.codeBorderWidth = 0
         oneTimeCodeTextLabel.isHidden = true
+        oneTimeCodeTextLabel.codeBorderColor = .clear
         oneTimeCodeTextLabel.translatesAutoresizingMaskIntoConstraints = false
         oneTimeCodeTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148).isActive = true
         oneTimeCodeTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 498).isActive = true
