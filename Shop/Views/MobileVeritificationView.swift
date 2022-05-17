@@ -36,7 +36,7 @@ class MobileVeritificationView: UIView {
         setPhoneText()
         setsendSmsBtn()
         setVerifyTextLabel()
-        oneTimeCodeTextLabel.configure(withSlotCount: 4, andSpacing: 10)
+        oneTimeCodeTextLabel.configure(withSlotCount: 4, andSpacing: 8)
         setOneTimeCodeTextField()
         setVerifyBtn()
         setFinishImage()
@@ -141,8 +141,7 @@ class MobileVeritificationView: UIView {
     
     func setOneTimeCodeTextField() {
         self.addSubview(oneTimeCodeTextLabel)
-        oneTimeCodeTextLabel.backgroundColor = .blue
-        oneTimeCodeTextLabel.codeFont = UIFont(name: "Poppins-Medium", size: 36)!
+//        oneTimeCodeTextLabel.codeFont = UIFont(name: "Poppins-Medium", size: 36)!
         oneTimeCodeTextLabel.codeMinimumScaleFactor = 0.9
         oneTimeCodeTextLabel.codeCornerRadius = 0
         oneTimeCodeTextLabel.codeCornerCurve = .circular
@@ -150,7 +149,8 @@ class MobileVeritificationView: UIView {
         oneTimeCodeTextLabel.isHidden = true
         oneTimeCodeTextLabel.codeBorderColor = .clear
         oneTimeCodeTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        oneTimeCodeTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148).isActive = true
+        oneTimeCodeTextLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//        oneTimeCodeTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 148).isActive = true
         oneTimeCodeTextLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 498).isActive = true
         oneTimeCodeTextLabel.addTarget(self, action: #selector(oneTimeCodeTaped), for: .editingChanged)
 

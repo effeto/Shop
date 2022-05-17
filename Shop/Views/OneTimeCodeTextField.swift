@@ -8,6 +8,9 @@
 import UIKit
 
 public class OneTimeCodeTextField: UITextField {
+    
+    let deafaultCharecter = "_"
+    
     // MARK: UI Components
     private(set) var digitLabels = [UILabel]()
     
@@ -134,6 +137,7 @@ public class OneTimeCodeTextField: UITextField {
             let slotLabel = generateSlotLabel()
             stackView.addArrangedSubview(slotLabel)
             digitLabels.append(slotLabel)
+            
         }
         
         return stackView
@@ -144,12 +148,13 @@ public class OneTimeCodeTextField: UITextField {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = true
         label.textAlignment = .center
-        label.font = codeFont
+        label.font = UIFont(name: "Poppins-Medium", size: 36)!
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
         label.textColor = codeTextColor
-        label.backgroundColor = codeBackgroundColor
+        label.backgroundColor = .clear
+        label.text = deafaultCharecter
         
         label.layer.masksToBounds = true
         label.layer.cornerRadius = codeCornerRadius
@@ -172,7 +177,7 @@ public class OneTimeCodeTextField: UITextField {
                 let index = code.index(code.startIndex, offsetBy: i)
                 currentLabel.text = String(code[index])
             } else {
-                currentLabel.text?.removeAll()
+                currentLabel.text? = deafaultCharecter
             }
         }
         
