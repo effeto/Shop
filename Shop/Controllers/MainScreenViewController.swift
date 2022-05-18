@@ -43,11 +43,13 @@ class MainScreenViewController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainScreenView.putYourAdressBtn)
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
-//    }
+    }
     
     
     
@@ -86,6 +88,10 @@ class MainScreenViewController: UIViewController {
     
     func iKnowAction() {
         print("Working!!!")
+        let iKnowWhatIWant = IKnowWhatIWantViewController()
+        self.hidesBottomBarWhenPushed = true
+        show(iKnowWhatIWant, sender: self)
+        
     }
     
 

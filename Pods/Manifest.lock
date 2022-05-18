@@ -1,16 +1,20 @@
 PODS:
   - FasterVerificationCode (0.4.1)
+  - IQKeyboardManagerSwift (6.5.9)
 
 DEPENDENCIES:
   - FasterVerificationCode
+  - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
     - FasterVerificationCode
+    - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   FasterVerificationCode: 1e1bd67202c977724ac6f6fbbb73efa090eca611
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
 
-PODFILE CHECKSUM: 731aa5ddfb9f7f31ca16027282cb663ac5939757
+PODFILE CHECKSUM: 9b6377f0649fd2796f7b8e302be6fa4794ea85eb
 
 COCOAPODS: 1.11.2

@@ -14,6 +14,8 @@
 		A50CDDFE2819288B00E3DB7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */; };
 		A50CDE00281928B500E3DB7C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */; };
 		A50CDE02281928D100E3DB7C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CDE01281928D100E3DB7C /* ProfileViewController.swift */; };
+		A5171A3E283512BB00951F94 /* IKnowWhatIWantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5171A3D283512BB00951F94 /* IKnowWhatIWantViewController.swift */; };
+		A5171A40283512D700951F94 /* IKnowWhatIWantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5171A3F283512D700951F94 /* IKnowWhatIWantView.swift */; };
 		A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE52816B2FA00A6563B /* AppDelegate.swift */; };
 		A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE72816B2FA00A6563B /* SceneDelegate.swift */; };
 		A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DDDE92816B2FA00A6563B /* LoginViewController.swift */; };
@@ -68,6 +70,8 @@
 		A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		A50CDE01281928D100E3DB7C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A5171A3D283512BB00951F94 /* IKnowWhatIWantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKnowWhatIWantViewController.swift; sourceTree = "<group>"; };
+		A5171A3F283512D700951F94 /* IKnowWhatIWantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKnowWhatIWantView.swift; sourceTree = "<group>"; };
 		A56DDDE22816B2FA00A6563B /* Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56DDDE52816B2FA00A6563B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A56DDDE72816B2FA00A6563B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */,
 				A50CDDF72819125800E3DB7C /* MainScreenView.swift */,
 				A5AA9D942833C4C80009AD27 /* AddAdressView.swift */,
+				A5171A3F283512D700951F94 /* IKnowWhatIWantView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */,
 				A50CDE01281928D100E3DB7C /* ProfileViewController.swift */,
 				A5AA9D962833C4EB0009AD27 /* AddAdressViewController.swift */,
+				A5171A3D283512BB00951F94 /* IKnowWhatIWantViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				A56E0CA1282AAC220067F4FC /* Malls.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
 				A5AA9D952833C4C80009AD27 /* AddAdressView.swift in Sources */,
+				A5171A3E283512BB00951F94 /* IKnowWhatIWantViewController.swift in Sources */,
 				A56DDE3F28181C9400A6563B /* OneTimeCodeTextField.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
 				A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */,
@@ -432,6 +439,7 @@
 				A50CDDFA2819225000E3DB7C /* MainScreenViewController.swift in Sources */,
 				A56E0C9D282A928A0067F4FC /* AdsCollectionViewCell.swift in Sources */,
 				A56DDE262816F0C200A6563B /* PhoneNumbersTableView.swift in Sources */,
+				A5171A40283512D700951F94 /* IKnowWhatIWantView.swift in Sources */,
 				A56DDE3B2817E6CD00A6563B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,8 +585,10 @@
 				INFOPLIST_FILE = Shop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,7 +598,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -605,8 +615,10 @@
 				INFOPLIST_FILE = Shop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

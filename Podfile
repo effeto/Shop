@@ -8,5 +8,5 @@ target 'Shop' do
   # Pods for Shop
 
 pod 'FasterVerificationCode'
-
+pod 'IQKeyboardManagerSwift'
 end
