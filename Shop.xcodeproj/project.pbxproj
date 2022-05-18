@@ -53,6 +53,9 @@
 		A56E0C9F282A93DC0067F4FC /* Adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0C9E282A93DC0067F4FC /* Adds.swift */; };
 		A56E0CA1282AAC220067F4FC /* Malls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0CA0282AAC220067F4FC /* Malls.swift */; };
 		A56E0CA3282AACB60067F4FC /* MallsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */; };
+		A5AA9D9328338F5A0009AD27 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA9D9228338F5A0009AD27 /* CategoriesCollectionViewCell.swift */; };
+		A5AA9D952833C4C80009AD27 /* AddAdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA9D942833C4C80009AD27 /* AddAdressView.swift */; };
+		A5AA9D972833C4EB0009AD27 /* AddAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA9D962833C4EB0009AD27 /* AddAdressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		A56E0C9E282A93DC0067F4FC /* Adds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adds.swift; sourceTree = "<group>"; };
 		A56E0CA0282AAC220067F4FC /* Malls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Malls.swift; sourceTree = "<group>"; };
 		A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5AA9D9228338F5A0009AD27 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5AA9D942833C4C80009AD27 /* AddAdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdressView.swift; sourceTree = "<group>"; };
+		A5AA9D962833C4EB0009AD27 /* AddAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdressViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				A56DDE352817C1FC00A6563B /* MobileVerifTableViewCell.swift */,
 				A56E0C9C282A928A0067F4FC /* AdsCollectionViewCell.swift */,
 				A56E0CA2282AACB60067F4FC /* MallsCollectionViewCell.swift */,
+				A5AA9D9228338F5A0009AD27 /* CategoriesCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 				A56DDE4028181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift */,
 				A56DDE2D28172AF500A6563B /* MobileVeritificationView.swift */,
 				A50CDDF72819125800E3DB7C /* MainScreenView.swift */,
+				A5AA9D942833C4C80009AD27 /* AddAdressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				A50CDDFD2819288B00E3DB7C /* OrdersViewController.swift */,
 				A50CDDFF281928B500E3DB7C /* NotificationsViewController.swift */,
 				A50CDE01281928D100E3DB7C /* ProfileViewController.swift */,
+				A5AA9D962833C4EB0009AD27 /* AddAdressViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,11 +410,13 @@
 				A56DDE362817C1FC00A6563B /* MobileVerifTableViewCell.swift in Sources */,
 				A50CDE02281928D100E3DB7C /* ProfileViewController.swift in Sources */,
 				A56DDE382817DE4B00A6563B /* String.swift in Sources */,
+				A5AA9D9328338F5A0009AD27 /* CategoriesCollectionViewCell.swift in Sources */,
 				A56DDDEA2816B2FA00A6563B /* LoginViewController.swift in Sources */,
 				A50CDDFC2819285E00E3DB7C /* SearchViewController.swift in Sources */,
 				A56DDE4128181CD100A6563B /* OneTimeCodeTextFieldDelegate.swift in Sources */,
 				A56E0CA1282AAC220067F4FC /* Malls.swift in Sources */,
 				A56DDDE62816B2FA00A6563B /* AppDelegate.swift in Sources */,
+				A5AA9D952833C4C80009AD27 /* AddAdressView.swift in Sources */,
 				A56DDE3F28181C9400A6563B /* OneTimeCodeTextField.swift in Sources */,
 				A56DDDFF2816B4C000A6563B /* LoginView.swift in Sources */,
 				A56DDE282816F0D600A6563B /* PhoneNumbersTableViewController.swift in Sources */,
@@ -414,6 +425,7 @@
 				A56DDE2E28172AF600A6563B /* MobileVeritificationView.swift in Sources */,
 				A56DDE3028172B0F00A6563B /* MobileVeritificationViewController.swift in Sources */,
 				A56E0CA3282AACB60067F4FC /* MallsCollectionViewCell.swift in Sources */,
+				A5AA9D972833C4EB0009AD27 /* AddAdressViewController.swift in Sources */,
 				A56DDDE82816B2FA00A6563B /* SceneDelegate.swift in Sources */,
 				A50CDDFE2819288B00E3DB7C /* OrdersViewController.swift in Sources */,
 				A56DDE2C2816FAB100A6563B /* CountriesData.swift in Sources */,

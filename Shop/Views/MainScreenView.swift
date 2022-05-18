@@ -22,11 +22,12 @@ class MainScreenView: UIView {
     
     func setView() {
         backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+        setPutYoirAdressBtn()
         setAds()
         setIKnowBtn()
-//        setPopMallLabel()
         setPopularMallsTableView()
         setCategoriesLabel()
+        setCategoriesCollection()
         
     }
     
@@ -37,10 +38,23 @@ class MainScreenView: UIView {
         button.setImage(UIImage(systemName: "map.png"), for: .normal)
         button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 16)
         button.setTitleColor(UIColor(red: 0.546, green: 0.546, blue: 0.546, alpha: 1), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
 
         return button
 
     }()
+    
+    func setPutYoirAdressBtn() {
+        self.addSubview(putYourAdressBtn)
+
+        putYourAdressBtn.widthAnchor.constraint(equalToConstant: 154).isActive = true
+        putYourAdressBtn.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        putYourAdressBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        putYourAdressBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 52).isActive = true
+    }
+    
+    
     
     let adsCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -77,7 +91,7 @@ class MainScreenView: UIView {
         button.setTitleColor(UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 1), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 20
         return button
     }()
     
@@ -113,7 +127,7 @@ class MainScreenView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.automaticallyAdjustsScrollIndicatorInsets = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .clear
         layout.scrollDirection = .horizontal
         collectionView.register(MallsCollectionViewCell.self, forCellWithReuseIdentifier: MallsCollectionViewCell.identifier)
         return collectionView
@@ -146,6 +160,32 @@ class MainScreenView: UIView {
         categoriesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
         categoriesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 512).isActive = true
     }
+    
+    
+    let categoriesCollection: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 124)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.automaticallyAdjustsScrollIndicatorInsets = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        layout.scrollDirection = .vertical
+        collectionView.register(CategoriesCollectionViewCell.self, forCellWithReuseIdentifier: CategoriesCollectionViewCell.identifier)
+        return collectionView
+    }()
+    
+    func setCategoriesCollection() {
+        self.addSubview(categoriesCollection)
+        categoriesCollection.widthAnchor.constraint(equalToConstant: 342).isActive = true
+        categoriesCollection.heightAnchor.constraint(equalToConstant: 212).isActive = true
+        categoriesCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        categoriesCollection.topAnchor.constraint(equalTo: self.topAnchor, constant: 560).isActive = true
+        
+    }
+    
+    
     
     @objc func putYourAdressTaped() {
         putYourAddresAction?()

@@ -20,6 +20,7 @@ class MainScreenViewController: UIViewController {
     
     var adds: [Adds] = []
     var malls: [Malls] = []
+    let categories = ["Electronics", "Medical", "Sneakers", "Food", "Cars"]
     
     
     override func viewDidLoad() {
@@ -36,15 +37,17 @@ class MainScreenViewController: UIViewController {
         mainScreenView.adsCollectionView.delegate = self
         mainScreenView.popularMallCollectionView.dataSource = self
         mainScreenView.popularMallCollectionView.delegate = self
+        mainScreenView.categoriesCollection.dataSource = self
+        mainScreenView.categoriesCollection.delegate = self
         
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainScreenView.putYourAdressBtn)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainScreenView.putYourAdressBtn)
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
+//    }
     
     
     
@@ -77,6 +80,8 @@ class MainScreenViewController: UIViewController {
     
     func putYourAdressAction() {
         print("Working!!!!")
+        let addAdressVC = AddAdressViewController()
+        show(addAdressVC, sender: self)
     }
     
     func iKnowAction() {
@@ -90,8 +95,15 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainScreenView.popularMallCollectionView {
             return malls.count
+        }else if collectionView == mainScreenView.adsCollectionView {
+            return adds.count
+        } else if collectionView == mainScreenView.categoriesCollection {
+            return categories.count
+        } else {
+            return 6
         }
-        return adds.count
+        
+            
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -99,17 +111,28 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             let cell = mainScreenView.popularMallCollectionView.dequeueReusableCell(withReuseIdentifier: MallsCollectionViewCell.identifier, for: indexPath) as! MallsCollectionViewCell
             cell.mainImageView.image = malls[indexPath.row].addImage
             cell.nameLabel.text = malls[indexPath.row].name
-            cell.backgroundColor = .green
+            cell.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
             cell.layer.cornerRadius = 12
-            return cell
-        }
 
-        let cell = mainScreenView.adsCollectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.identifier, for: indexPath) as! AdsCollectionViewCell
-        cell.mainImageView.image =  adds[indexPath.row].addImage
-        cell.backgroundColor = .red
-        cell.layer.cornerRadius = 12
- 
-        return cell
+            return cell
+        }else if collectionView == mainScreenView.adsCollectionView {
+            let cell1 = mainScreenView.adsCollectionView.dequeueReusableCell(withReuseIdentifier: AdsCollectionViewCell.identifier, for: indexPath) as! AdsCollectionViewCell
+            cell1.mainImageView.image =  adds[indexPath.row].addImage
+            cell1.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
+            cell1.layer.cornerRadius = 12
+
+            return cell1
+        }else if collectionView == mainScreenView.categoriesCollection{
+            let cell2 = mainScreenView.categoriesCollection.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.identifier, for: indexPath) as! CategoriesCollectionViewCell
+            cell2.nameLabel.text = categories[indexPath.row]
+            cell2.layer.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1).cgColor
+            cell2.layer.cornerRadius = 12
+
+            return cell2
+        } else {
+            return UICollectionViewCell()
+        }
+        
     }
     
     func getAdd() -> [Adds] {

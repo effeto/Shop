@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     func appleBtnAction() {
         print ("working")
         let mainScreenVC = MainScreenViewController()
-        mainScreenVC.createTapBar()
+//        mainScreenVC.createTapBar()
         show(mainScreenVC, sender: self)
         
     }
